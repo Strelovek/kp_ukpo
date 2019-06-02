@@ -2,6 +2,8 @@ package main;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class SimpleRegExTest {
 
     /*================================================
@@ -9,7 +11,8 @@ public class SimpleRegExTest {
      ===============================================*/
 
     SimpleRegEx t = new SimpleRegEx();
-    String regex,txt,expected;
+    String regex,txt;
+    ArrayList<Integer> expected=new ArrayList<Integer>();
 
     @Test
     public void indexOf_incorrect_input_arguments() {
@@ -208,19 +211,27 @@ public class SimpleRegExTest {
         regex = "ab";
         txt = "qqqabwwwwwabryyhgghbnvbcab";
         txt += "#";
-        expected=";3;10;24";
+        expected.clear();
+        expected.add(3);
+        expected.add(10);
+        expected.add(24);
         Assert.assertEquals(expected, t.findAll(regex, txt));
 
         regex = "a*q";
         txt = "qqqabwwwaaaaq wwabryyhgghbqaaqnvbcab";
         txt += "#";
-        expected=";11;28";
+        expected.clear();
+        expected.add(11);
+        expected.add(28);
         Assert.assertEquals(expected, t.findAll(regex, txt));
 
         regex = "b+y";
         txt = "bywraddgfgbbykok;k;k; bbby";
         txt += "#";
-        expected=";0;11;24";
+        expected.clear();
+        expected.add(0);
+        expected.add(11);
+        expected.add(24);
         Assert.assertEquals(expected, t.findAll(regex, txt));
     }
 
@@ -229,19 +240,17 @@ public class SimpleRegExTest {
         regex = "";
         txt = "";
         txt += "#";
-        expected="";
+        expected.clear();
         Assert.assertEquals(expected, t.findAll(regex, txt));
 
         regex = "a*q";
         txt = "";
         txt += "#";
-        expected="";
         Assert.assertEquals(expected, t.findAll(regex, txt));
 
         regex = "";
         txt = "bywraddgfgbbykok;k;k; bbby";
         txt += "#";
-        expected="";
         Assert.assertEquals(expected, t.findAll(regex, txt));
     }
 }
