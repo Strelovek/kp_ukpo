@@ -38,8 +38,8 @@
       <file leaf-file-name="SimpleRegExTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/main/SimpleRegExTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="243" column="61" selection-start-line="243" selection-start-column="61" selection-end-line="243" selection-end-column="61" />
+            <state relative-caret-position="609">
+              <caret line="242" column="18" selection-start-line="242" selection-start-column="18" selection-end-line="242" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -200,7 +200,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -581,17 +581,11 @@
       <workItem from="1546079423251" duration="75000" />
       <workItem from="1546959251839" duration="618000" />
       <workItem from="1559413937675" duration="9073000" />
-      <workItem from="1559426528339" duration="7590000" />
+      <workItem from="1559426528339" duration="7881000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="frmTest_test - 2018.12.28 at 19h 43m 19s.xml">
-      <configuration name="frmTest.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Unnamed - 2018.12.28 at 19h 44m 04s.xml">
-      <configuration name="Unnamed" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SimpleRegExTest - 2018.12.29 at 02h 22m 46s.xml">
       <configuration name="SimpleRegExTest" configurationId="JUnit" />
     </history-entry>
@@ -616,12 +610,18 @@
     <history-entry file="SimpleRegExTest - 2019.06.01 at 23h 05m 04s.xml">
       <configuration name="SimpleRegExTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SimpleRegExTest - 2019.06.02 at 03h 07m 07s.xml">
+      <configuration name="SimpleRegExTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleRegExTest - 2019.06.02 at 03h 10m 46s.xml">
+      <configuration name="SimpleRegExTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101961000" />
+    <option name="totallyTimeSpent" value="102252000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -1027,8 +1027,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/main/SimpleRegExTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="243" column="61" selection-start-line="243" selection-start-column="61" selection-end-line="243" selection-end-column="61" />
+        <state relative-caret-position="609">
+          <caret line="242" column="18" selection-start-line="242" selection-start-column="18" selection-end-line="242" selection-end-column="18" />
         </state>
       </provider>
     </entry>
