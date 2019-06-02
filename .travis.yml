@@ -1,8 +1,18 @@
-language: java
 install: true
 
-jdk:oraclejdk8
+jdk: oraclejdk8
 
-before install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+language: java
+
+cache:
+  directories:
+    - $HOME/.m2
+
+os:
+  - linux
+
+before install: 
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   
-script: ./mvnw clean test
+script:
+  - ./mvnw clean test
