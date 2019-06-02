@@ -1,7 +1,8 @@
 package main;
 import org.junit.Assert;
+import org.junit.Test;
 
-class SimpleRegExTest {
+public class SimpleRegExTest {
 
     /*================================================
      * black box tests
@@ -10,8 +11,8 @@ class SimpleRegExTest {
     SimpleRegEx t = new SimpleRegEx();
     String regex,txt,expected;
 
-    @org.junit.jupiter.api.Test
-    void indexOf_incorrect_input_arguments() {
+    @Test
+    public void indexOf_incorrect_input_arguments() {
         regex = ".+.";
         txt = "";
         txt += "#";
@@ -29,8 +30,8 @@ class SimpleRegExTest {
 
     }
 
-    @org.junit.jupiter.api.Test
-    void indexOf_include_regEx() {
+    @Test
+    public  void indexOf_include_regEx() {
         regex = "aQ";
         txt = "aQ";
         txt += "#";
@@ -57,8 +58,8 @@ class SimpleRegExTest {
         Assert.assertEquals(6, t.indexOf(regex, txt));
     }
 
-    @org.junit.jupiter.api.Test
-    void indexOf_not_include_regEx() {
+    @Test
+    public  void indexOf_not_include_regEx() {
         regex = "aQ";
         txt = "dgd fgdfg";
         txt += "#";
@@ -88,8 +89,8 @@ class SimpleRegExTest {
     /*================================================
      * white box tests
      ===============================================*/
-    @org.junit.jupiter.api.Test
-    void indexOf_all_symb() {
+    @Test
+    public void indexOf_all_symb() {
         regex = ".";
         txt = "dgd fgdfg";
         txt += "#";
@@ -111,8 +112,8 @@ class SimpleRegExTest {
         Assert.assertEquals(1, t.indexOf(regex, txt));
     }
 
-    @org.junit.jupiter.api.Test
-    void indexOf_zero_or_more() {
+    @Test
+    public void indexOf_zero_or_more() {
         regex = ".*";
         txt = "dgd fgdfg";
         txt += "#";
@@ -125,8 +126,8 @@ class SimpleRegExTest {
 
     }
 
-    @org.junit.jupiter.api.Test
-    void indexOf_one_or_more() {
+    @Test
+    public void indexOf_one_or_more() {
         regex = ".+";
         txt = "dgd fgdfg";
         txt += "#";
@@ -148,8 +149,8 @@ class SimpleRegExTest {
         Assert.assertEquals(2, t.indexOf(regex, txt));
     }
 
-    @org.junit.jupiter.api.Test
-    void indexOf_combo() {
+    @Test
+    public void indexOf_combo() {
         regex = "c*a.b+";
         txt = "cawbbb";
         txt += "#";
@@ -172,8 +173,8 @@ class SimpleRegExTest {
 
     }
 
-    @org.junit.jupiter.api.Test
-    void check_specific_incorrect_arguments() {
+    @Test
+    public void check_specific_incorrect_arguments() {
         regex = "./";
         txt = "";
         txt += "#";
@@ -202,8 +203,8 @@ class SimpleRegExTest {
     /*================================================
      * kp tests
      ===============================================*/
-    @org.junit.jupiter.api.Test
-    void check_correct_findAll() {
+    @Test
+    public void check_correct_findAll() {
         regex = "ab";
         txt = "qqqabwwwwwabryyhgghbnvbcab";
         txt += "#";
@@ -223,8 +224,8 @@ class SimpleRegExTest {
         Assert.assertEquals(expected, t.findAll(regex, txt));
     }
 
-    @org.junit.jupiter.api.Test
-    void check_incorrect_findAll() {
+    @Test
+    public  void check_incorrect_findAll() {
         regex = "";
         txt = "";
         txt += "#";
