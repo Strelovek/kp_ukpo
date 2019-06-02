@@ -13,11 +13,27 @@ public class SimpleRegEx {
             for (int i = 0; i < src.length(); i++) {
                 if (parse(src, i)) {
                     answ = i;
-                    break;
+                    return answ;
                 }
             }
         }
         return answ;
+    }
+
+    public String findAll(String reg, String src) {
+        int answ = -1;
+        String w=new String();
+        System.out.println("regex : " + checkRegEx(reg));
+        if (checkRegEx(reg)) {
+            createParseTable(reg);
+            for (int i = 0; i < src.length(); i++) {
+                if (parse(src, i)) {
+                    w=w+";"+Integer.toString(i);
+
+                }
+            }
+        }
+        return w;
     }
 
     private void createParseTable(String reg) {
@@ -74,7 +90,7 @@ public class SimpleRegEx {
                 }
             }
         }
-        //fs.add(parsetable.size());
+
         for (ArrayList<Pair<Character, Integer>> i : parsetable) {
             for (Pair<Character, Integer> j : i)
                 if(fs<j.getValue())

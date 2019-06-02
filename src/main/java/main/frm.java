@@ -10,18 +10,14 @@ public class frm extends JFrame {
     private JTextArea textArea2;
     private JTextArea textArea3;
     private JButton parseButton;
-    private JButton stressTestButton;
+    private JButton helpButton;
+    private JButton btallfind;
 
     public frm(){
         this.getContentPane().add(root);
+        this.btallfind.addActionListener(new MyButtonListener3());
         this.parseButton.addActionListener(new MyButtonListener());
-        this.stressTestButton.addActionListener(new MyButtonListener2());
-        parseButton.setName("parse");
-        stressTestButton.setName("streesTest");
-        textArea3.setName("answ");
-        textArea1.setName("regEx");
-        textArea2.setName("txt");
-
+        this.helpButton.addActionListener(new MyButtonListener2());
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
@@ -33,7 +29,12 @@ public class frm extends JFrame {
     }
     public class MyButtonListener2 implements ActionListener {
         public void actionPerformed(ActionEvent actionEvent) {
-            stressTest();
+           help();
+        }
+    }
+    public class MyButtonListener3 implements ActionListener {
+        public void actionPerformed(ActionEvent actionEvent) {
+            btFindAllClick();
         }
     }
     void btnclick(){
@@ -56,14 +57,19 @@ public class frm extends JFrame {
 
     }
 
-    void stressTest(){
-            String reg = "c*a.b+";
-            String src = "cawbbb#";
-            SimpleRegEx parse = new SimpleRegEx();;
-        for(int i =0 ;i<=9000;i++){
-            System.out.println(i);
-                parse.indexOf(reg,src);
-        }
-        System.out.print("Done");
+    void help(){
+        textArea3.setText("Результат работы парсера.");
+        textArea1.setText("Поле для задания регулярного выражения. Правила создания выражения: \n   \".\" – любой символ\n" +
+                "  \"*\" - 0 и более символов,\n" +
+                "  \"+\" - 1 и более символов");
+        textArea2.setText("Текст для поиска вставлять сюда.");
+    }
+
+    void btFindAllClick(){
+        String reg = textArea1.getText();
+        String src = textArea2.getText();
+        src+='#';
+        SimpleRegEx parse = new SimpleRegEx();
+        textArea3.setText(parse.findAll(reg,src));
     }
 }

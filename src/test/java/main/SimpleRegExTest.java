@@ -8,8 +8,7 @@ class SimpleRegExTest {
      ===============================================*/
 
     SimpleRegEx t = new SimpleRegEx();
-    String regex;
-    String txt;
+    String regex,txt,expected;
 
     @org.junit.jupiter.api.Test
     void indexOf_incorrect_input_arguments() {
@@ -124,10 +123,6 @@ class SimpleRegExTest {
         txt += "#";
         Assert.assertEquals(0, t.indexOf(regex, txt));
 
-        /*regex = "be*";
-        txt = "b beeeee";
-        txt += "#";
-        Assert.assertEquals(0, t.indexOf(regex, txt));*/
     }
 
     @org.junit.jupiter.api.Test
@@ -204,5 +199,48 @@ class SimpleRegExTest {
         txt += "#";
         Assert.assertEquals(-1, t.indexOf(regex, txt));
     }
+    /*================================================
+     * kp tests
+     ===============================================*/
+    @org.junit.jupiter.api.Test
+    void check_correct_findAll() {
+        regex = "ab";
+        txt = "qqqabwwwwwabryyhgghbnvbcab";
+        txt += "#";
+        expected=";3;10;24";
+        Assert.assertEquals(expected, t.findAll(regex, txt));
 
+        regex = "a*q";
+        txt = "qqqabwwwaaaaq wwabryyhgghbqaaqnvbcab";
+        txt += "#";
+        expected=";11;28";
+        Assert.assertEquals(expected, t.findAll(regex, txt));
+
+        regex = "b+y";
+        txt = "bywraddgfgbbykok;k;k; bbby";
+        txt += "#";
+        expected=";0;11;24";
+        Assert.assertEquals(expected, t.findAll(regex, txt));
+    }
+
+    @org.junit.jupiter.api.Test
+    void check_incorrect_findAll() {
+        regex = "";
+        txt = "";
+        txt += "#";
+        expected="";
+        Assert.assertEquals(expected, t.findAll(regex, txt));
+
+        regex = "a*q";
+        txt = "";
+        txt += "#";
+        expected="";
+        Assert.assertEquals(expected, t.findAll(regex, txt));
+
+        regex = "";
+        txt = "bywraddgfgbbykok;k;k; bbby";
+        txt += "#";
+        expected="";
+        Assert.assertEquals(expected, t.findAll(regex, txt));
+    }
 }
