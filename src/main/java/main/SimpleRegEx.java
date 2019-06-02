@@ -20,20 +20,18 @@ public class SimpleRegEx {
         return answ;
     }
 
-    public String findAll(String reg, String src) {
-        int answ = -1;
-        String w=new String();
+    public ArrayList<Integer> findAll(String reg, String src) {
+        ArrayList<Integer> answ=new ArrayList<Integer>();
         System.out.println("regex : " + checkRegEx(reg));
         if (checkRegEx(reg)) {
             createParseTable(reg);
             for (int i = 0; i < src.length(); i++) {
                 if (parse(src, i)) {
-                    w=w+";"+Integer.toString(i);
-
+                    answ.add(i);
                 }
             }
         }
-        return w;
+        return answ;
     }
 
     private void createParseTable(String reg) {

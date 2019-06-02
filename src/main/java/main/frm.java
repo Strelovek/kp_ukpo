@@ -70,6 +70,6 @@ public class frm extends JFrame {
         String src = textArea2.getText();
         src+='#';
         SimpleRegEx parse = new SimpleRegEx();
-        textArea3.setText(parse.findAll(reg,src));
+        textArea3.setText(parse.findAll(reg,src).toString());
     }
 }
